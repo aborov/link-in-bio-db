@@ -1,0 +1,15 @@
+<% @list_of_items.each do |the_item| %>
+  <div class="item">
+    <a href="<%= the_item.link_url %>" target="_blank" rel="noopener noreferrer">
+      <% if the_item.thumbnail_url.present? %>
+        <img src="<%= the_item.thumbnail_url %>" alt="Thumbnail">
+      <% end %>
+
+      <% if the_item.icon_class.present? %>
+        <i class="<%= the_item.icon_class %>"></i>
+      <% end %>
+
+      <%= the_item.link_description %>
+    </a>
+  </div>
+<% end %>
